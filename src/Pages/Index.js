@@ -1,53 +1,37 @@
 import React from 'react';
-import {Text} from 'react-native'
+
 import { StyleSheet, Image, Dimensions} from 'react-native';
+import TextDefault from '../components/Text';
 import { View } from 'react-native';
-import topo from '../../assets/topo.png';
+import Topo from './Cesta/components/topo';
 import logo from '../../assets/logo.png';
 
-const width = Dimensions.get('screen').width;
+
 
 export default function Cesta(){
     return <>
-    <Image source = {topo} style = {styles.topo} />
-    <Text style = {styles.titulo}>Detalhes da Cesta</Text>
-
+    <Topo />
     <View style ={styles.cesta}>
-        <Text style = {styles.nome}>Cesta de Verduras</Text>
+        <TextDefault style = {styles.nome}>Cesta de Verduras</TextDefault>
         <View style = {styles.fazenda}>
         <Image source={logo} style = {styles.logo} />
-        <Text style= {styles.nomeFazenda}>Fazenda Mineira</Text>
+        <TextDefault style= {styles.nomeFazenda}>Fazenda Mineira</TextDefault>
         </View>
-        <Text style = {styles.descricao}>Um cesta com produtos selecionados 
-        cuidadosamente da fazenda direito pra sua cozinha. </Text>
-        <Text style = {styles.preco}>R$ 40,00</Text>
+        <TextDefault style = {styles.descricao}>Uma cesta com produtos selecionados 
+        cuidadosamente da fazenda direito pra sua cozinha. </TextDefault>
+        <TextDefault style = {styles.preco}>R$ 40,00</TextDefault>
     </View>
     </>
 }
 
 const styles = StyleSheet.create({
-    topo: {
-       width:"100%",
-       height: 578 /768 * width,
-
-    },
-    titulo: {
-    width: "100%",
-     position: 'absolute' ,
-     textAlign: 'left',
-     fontSize: 16,
-     lineHeight: 30,
-     color: 'white',
-     fontWeight: 'bold',
-     padding: 30
-
-    },
+    
     nome:{
         color: '#454545',
         fontSize: 26,
         lineHeight: 42,
-        fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'MontserratBold',
     },
     cesta:{
         paddingVertical: 8,
@@ -56,7 +40,8 @@ const styles = StyleSheet.create({
     nomeFazenda: {
         fontSize: 16,
         lineHeight: 26,
-        marginLeft:12
+        marginLeft:12,
+        fontFamily: 'MontserratRegular',
 
     },
     descricao: {
